@@ -1,6 +1,6 @@
 package com.bimda.cdshproject.utils;
 
-import org.apache.tomcat.util.codec.binary.Base64;
+import org.apache.commons.codec.binary.Base64;
 
 import java.security.MessageDigest;
 

@@ -30,7 +30,7 @@ spring:
 #
 ############################################################
 mybatis:
-  type-aliases-package: com.imooc.mapper          # 所有POJO类所在包路径
+  type-aliases-package: com.bimda.cdshproject.mapper          # 所有POJO类所在包路径
   mapper-locations: classpath:mapper/*.xml      # mapper映射文件
 #  configuration:
 #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
@@ -50,8 +50,3 @@ server:
 #
 ############################################################
 # 通用 Mapper 配置
-mapper:
-  mappers: com.imooc.my.mapper.MyMapper
-  not-empty: false
-  identity: MYSQL
-# 分页插件配置

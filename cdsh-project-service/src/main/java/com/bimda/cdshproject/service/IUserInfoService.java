@@ -13,4 +13,10 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IUserInfoService extends IService<UserInfo> {
 
+    /**
+     * 根据用户编号查询用户
+     * @param uId 用户编号
+     * @return
+     */
+    UserInfo selectUserById(String uId);
 }

@@ -1,5 +1,7 @@
 package com.bimda.cdshproject.pojo;
 
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,6 +21,7 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@TableName(value = "user_info")
 public class UserInfo {
 
     private static final long serialVersionUID = 1L;
@@ -26,6 +29,7 @@ public class UserInfo {
     /**
      * u_id 用户编号
      */
+    @TableId
     @ApiModelProperty("用户编号")
     private String uId;
 
