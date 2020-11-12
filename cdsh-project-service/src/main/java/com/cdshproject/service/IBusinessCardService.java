@@ -1,6 +1,6 @@
 package com.cdshproject.service;
 
-import bimda.cdshproject.pojo.BusinessCard;
+import com.cdshproject.pojo.BusinessCard;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 

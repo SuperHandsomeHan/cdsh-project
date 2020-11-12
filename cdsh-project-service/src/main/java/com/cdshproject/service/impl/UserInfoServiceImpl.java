@@ -1,7 +1,7 @@
 package com.cdshproject.service.impl;
 
-import bimda.cdshproject.mapper.UserInfoMapper;
-import bimda.cdshproject.pojo.UserInfo;
+import com.cdshproject.mapper.UserInfoMapper;
+import com.cdshproject.pojo.UserInfo;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cdshproject.service.IUserInfoService;
 import org.springframework.stereotype.Service;

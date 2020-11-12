@@ -1,6 +1,6 @@
 package com.cdshproject.service;
 
-import bimda.cdshproject.pojo.UserInfo;
+import com.cdshproject.pojo.UserInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

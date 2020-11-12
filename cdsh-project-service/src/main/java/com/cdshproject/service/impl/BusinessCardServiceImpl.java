@@ -1,7 +1,7 @@
 package com.cdshproject.service.impl;
 
-import bimda.cdshproject.mapper.BusinessCardMapper;
-import bimda.cdshproject.pojo.BusinessCard;
+import com.cdshproject.mapper.BusinessCardMapper;
+import com.cdshproject.pojo.BusinessCard;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cdshproject.service.IBusinessCardService;
 import org.springframework.stereotype.Service;
