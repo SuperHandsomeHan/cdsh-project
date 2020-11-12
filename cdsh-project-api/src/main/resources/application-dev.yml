@@ -1,0 +1,14 @@
+server:
+  port: 10488
+spring:
+  datasource:                                           # 数据源的相关配置        # 数据源类型：HikariCP
+    url: jdbc:mysql://14.21.59.78:7788:3306/foodie-shop?useSSL=false&useUnicode=true&characterEncoding=utf8
+    password: root
+  redis:
+    database: 1
+    host: 47.94.40.248
+    port: 6379
+    password: ls123456.
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

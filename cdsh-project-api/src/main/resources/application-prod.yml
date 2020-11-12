@@ -1,0 +1,11 @@
+server:
+  port: 80
+spring:
+  datasource:                                           # 数据源的相关配置        # 数据源类型：HikariCP
+    url: jdbc:mysql://14.21.59.78:3306/cdsh_DB?useSSL=false&useUnicode=true&characterEncoding=utf8
+    password: Bm@@#2020
+  redis:
+    database: 1
+    host: 182.92.113.189
+    port: 6379
+    password: ls123456.
