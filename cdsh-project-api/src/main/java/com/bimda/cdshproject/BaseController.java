@@ -1,4 +1,4 @@
-package com.bimda.cdshproject.controller;
+package com.bimda.cdshproject;
 
 import com.bimda.cdshproject.controller.vo.ResponseVO;
 import org.springframework.http.HttpStatus;

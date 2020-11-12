@@ -1,6 +1,7 @@
 package com.bimda.cdshproject.controller;
 
 
+import com.bimda.cdshproject.BaseController;
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
