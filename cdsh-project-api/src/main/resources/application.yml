@@ -11,6 +11,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver          # mysql驱动
     #    url: jdbc:mysql://localhost:3306/foodie-shop?useSSL=false&useUnicode=true&characterEncoding=utf8
     username: admin
+    #username: Achine
     #    password: root
     hikari:
       connection-timeout: 30000       # 等待连接池分配连接的最大时长（毫秒），超过这个时长还没可用的连接则发生SQLException， 默认:30秒
@@ -49,4 +50,4 @@ server:
 # mybatis mapper 配置
 #
 ############################################################
-# 通用 Mapper 配置
+# Mapper Plus 配置
