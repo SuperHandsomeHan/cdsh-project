@@ -72,4 +72,7 @@ public class UserInfo {
     @ApiModelProperty("业务合作范围")
     private String cooperateScope ;
 
+    /** user_type;用户类型 */
+    @ApiModelProperty("用户类型")
+    private Integer userType ;
 }

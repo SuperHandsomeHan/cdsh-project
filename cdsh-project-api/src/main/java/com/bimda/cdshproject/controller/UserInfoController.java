@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/bimda/user-info")
-@Api(value = "会员信息表接口", tags = "会员信息表模块接口")
+@Api(value = "会员信息接口", tags = "会员信息模块接口")
 public class UserInfoController extends BaseController {
 
 }
