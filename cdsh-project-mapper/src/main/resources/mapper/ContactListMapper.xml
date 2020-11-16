@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bimda.cdshproject.mapper.ContactListMapper">
+
+    <resultMap id="contactInfoMap" type="com.bimda.cdshproject.pojo.vo.ContactInfoVO">
+        <association property="contactInfo" resultMap="contactMap"/>
+        <association property="userInfo" resultMap="userMap"/>
+    </resultMap>
+    <resultMap id="contactMap" type="com.bimda.cdshproject.pojo.UserContactInfo">
+        <id property="userId" column="user_id"/>
+        <result property="userAli" column="user_ali"/>
+        <result property="userEmail" column="user_email"/>
+        <result property="userFax" column="user_fax"/>
+        <result property="userFixedTel" column="user_fixed_tel"/>
+        <result property="userQq" column="user_qq"/>
+        <result property="userWechat" column="user_wechat"/>
+        <result property="website" column="website"/>
+    </resultMap>
+    <resultMap id="userMap" type="com.bimda.cdshproject.pojo.UserInfo">
+        <id property="userId" column="user_id"/>
+        <result property="company" column="company"/>
+        <result property="cooperateScope" column="cooperate_scope"/>
+        <result property="faceUrl" column="face_url"/>
+        <result property="openId" column="open_id"/>
+        <result property="userAddress" column="user_address"/>
+        <result property="userName" column="user_name"/>
+        <result property="userNative" column="user_native"/>
+        <result property="userPosition" column="user_position"/>
+        <result property="userRegion" column="user_region"/>
+        <result property="userTel" column="user_tel"/>
+        <result property="userType" column="user_type"/>
+    </resultMap>
+
+    <select id="listContactInfoByType" resultMap="contactInfoMap">
+        select ui.user_id, ui.user_name, ui.user_native, ui.user_position, ui.face_url, ui.open_id, ui.company,
+        ui.user_region, ui.user_address, ui.user_tel, ui.cooperate_scope, ui.user_type, uci.user_fixed_tel,
+        uci.user_fax, uci.user_wechat, uci.user_qq, uci.user_ali, uci.user_email, uci.website
+        from user_info ui left join user_contact_info uci on ui.user_id = uci.user_id
+        where ui.user_type in
+        <foreach collection="array" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </select>
+
+    <select id="listContactInfo" resultMap="contactInfoMap">
+        select ui.user_id, ui.user_name, ui.user_native, ui.user_position, ui.face_url, ui.open_id, ui.company,
+        ui.user_region, ui.user_address, ui.user_tel, ui.cooperate_scope, ui.user_type, uci.user_fixed_tel,
+        uci.user_fax, uci.user_wechat, uci.user_qq, uci.user_ali, uci.user_email, uci.website
+        from user_info ui left join user_contact_info uci on ui.user_id = uci.user_id
+    </select>
+</mapper>

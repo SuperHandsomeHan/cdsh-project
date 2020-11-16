@@ -50,7 +50,7 @@ public class AddUserServiceImpl implements IAddUserService {
             //设置返回对象
             ContactInfoVO vo = new ContactInfoVO();
             vo.setUserInfo(bo.getUserInfo());
-            vo.setContactList(bo.getContactList());
+            /*vo.setContactList(bo.getContactList());*/
             return vo;
         }catch (Exception e){
             throw new ApiException(e);

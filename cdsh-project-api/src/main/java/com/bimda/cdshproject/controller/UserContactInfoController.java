@@ -2,11 +2,18 @@ package com.bimda.cdshproject.controller;
 
 
 import com.bimda.cdshproject.BaseController;
+import com.bimda.cdshproject.pojo.vo.ContactInfoVO;
+import com.bimda.cdshproject.service.IContactListService;
 import com.bimda.cdshproject.service.IUserContactInfoService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p>
@@ -22,6 +29,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserContactInfoController extends BaseController {
 
     @Autowired
-    private IUserContactInfoService userContactInfoService;
+    private IContactListService contactListService;
+
+    @GetMapping("/contactList")
+    @ApiOperation(value = "通讯录查询", notes = "通讯录查询，返回的是ContactInfoVO集合",
+            httpMethod = "get")
+    @CrossOrigin(origins = "*", methods = {RequestMethod.GET})
+    public List<ContactInfoVO> contactList(){
+        List<ContactInfoVO> list = new ArrayList<>();
+        list = contactListService.listContactInfoByType(1);
+        return contactList();
+    }
 
 }
