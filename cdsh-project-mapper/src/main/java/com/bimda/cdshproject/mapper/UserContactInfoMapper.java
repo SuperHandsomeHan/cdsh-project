@@ -1,6 +1,6 @@
 package com.bimda.cdshproject.mapper;
 
-import com.bimda.cdshproject.pojo.ContactList;
+import com.bimda.cdshproject.pojo.UserContactInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author jobob
  * @since 2020-11-11
  */
-public interface ContactListMapper extends BaseMapper<ContactList> {
+public interface UserContactInfoMapper extends BaseMapper<UserContactInfo> {
 
 }

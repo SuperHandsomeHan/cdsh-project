@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
 
 import java.time.LocalDate;
 
@@ -26,41 +27,49 @@ public class UserInfo {
 
     private static final long serialVersionUID = 1L;
 
-    /**
-     * u_id 用户编号
-     */
-    @TableId
+    /** user_id;用户编号 */
+    @Id
     @ApiModelProperty("用户编号")
-    private String uId;
+    private String userId ;
 
-    /**
-     * u_name 用户名称
-     */
+    /** user_name;用户名称 */
     @ApiModelProperty("用户名称")
-    private String uName;
+    private String userName ;
 
-    /**
-     * u_sex 性别
-     */
-    @ApiModelProperty("性别")
-    private String uSex;
+    /** user_native;用户籍贯 */
+    @ApiModelProperty("用户籍贯")
+    private String userNative ;
 
-    /**
-     * u_birthday 生日
-     */
-    @ApiModelProperty("生日")
-    private LocalDate uBirthday;
+    /** user_position;用户职位标识码 */
+    @ApiModelProperty("用户职位标识码")
+    private String userPosition ;
 
-    /**
-     * u_native 籍贯
-     */
-    @ApiModelProperty("籍贯")
-    private String uNative;
+    /** face_url;用户头像 */
+    @ApiModelProperty("用户头像")
+    private String faceUrl ;
 
-    /**
-     * u_face 头像
-     */
-    @ApiModelProperty("头像")
-    private String uFace;
+    /** open_id;微信唯一标识 */
+    @ApiModelProperty("微信唯一标识")
+    private String openId ;
+
+    /** company;公司 */
+    @ApiModelProperty("公司")
+    private String company ;
+
+    /** user_region;用户地区编号 */
+    @ApiModelProperty("用户地区编号")
+    private String userRegion ;
+
+    /** user_address;用户地址 */
+    @ApiModelProperty("用户地址")
+    private String userAddress ;
+
+    /** user_tel;用户手机号 */
+    @ApiModelProperty("用户手机号")
+    private String userTel ;
+
+    /** cooperate_scope;业务合作范围 */
+    @ApiModelProperty("业务合作范围")
+    private String cooperateScope ;
 
 }

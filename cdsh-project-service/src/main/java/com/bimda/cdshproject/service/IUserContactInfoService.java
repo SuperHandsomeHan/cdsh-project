@@ -1,6 +1,6 @@
 package com.bimda.cdshproject.service;
 
-import com.bimda.cdshproject.pojo.ContactList;
+import com.bimda.cdshproject.pojo.UserContactInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author jobob
  * @since 2020-11-11
  */
-public interface IContactListService extends IService<ContactList> {
+public interface IUserContactInfoService extends IService<UserContactInfo> {
 
 }

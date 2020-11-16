@@ -13,7 +13,7 @@ import com.bimda.cdshproject.pojo.vo.UserVO;
  * @PROJECT_NAME: cdsh-project
  * @Desc:
  */
-public interface AddUserService {
+public interface IAddUserService {
 
     /**
      * 添加用户

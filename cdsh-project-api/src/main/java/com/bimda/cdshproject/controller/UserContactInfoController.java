@@ -17,6 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/bimda/contact-list")
 @Api(value = "通讯录接口", tags = "通讯录模块接口")
-public class ContactListController extends BaseController {
+public class UserContactInfoController extends BaseController {
 
 }

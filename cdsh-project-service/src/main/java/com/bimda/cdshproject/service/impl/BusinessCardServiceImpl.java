@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
  * @author jobob
  * @since 2020-11-11
  */
-@Service
+@Service("businessCardService")
 public class BusinessCardServiceImpl extends ServiceImpl<BusinessCardMapper, BusinessCard> implements IBusinessCardService {
 
 }

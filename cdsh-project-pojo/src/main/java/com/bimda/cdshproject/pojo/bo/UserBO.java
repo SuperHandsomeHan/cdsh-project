@@ -1,6 +1,6 @@
 package com.bimda.cdshproject.pojo.bo;
 
-import com.bimda.cdshproject.pojo.ContactList;
+import com.bimda.cdshproject.pojo.UserContactInfo;
 import com.bimda.cdshproject.pojo.UserInfo;
 import lombok.Data;
 
@@ -29,5 +29,5 @@ public class UserBO {
     /**
      * 通讯列表信息
      */
-    private ContactList contactList;
+    private UserContactInfo contactList;
 }
