@@ -2,7 +2,9 @@ package com.bimda.cdshproject.controller;
 
 
 import com.bimda.cdshproject.BaseController;
+import com.bimda.cdshproject.service.IUserContactInfoService;
 import io.swagger.annotations.Api;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,5 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/bimda/contact-list")
 @Api(value = "通讯录接口", tags = "通讯录模块接口")
 public class UserContactInfoController extends BaseController {
+
+    @Autowired
+    private IUserContactInfoService userContactInfoService;
 
 }

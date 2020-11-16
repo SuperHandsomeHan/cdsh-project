@@ -3,7 +3,7 @@ package com.bimda.cdshproject.service.impl;
 import com.bimda.cdshproject.mapper.UserContactInfoMapper;
 import com.bimda.cdshproject.mapper.UserInfoMapper;
 import com.bimda.cdshproject.pojo.bo.UserBO;
-import com.bimda.cdshproject.pojo.vo.UserVO;
+import com.bimda.cdshproject.pojo.vo.ContactInfoVO;
 import com.bimda.cdshproject.service.IAddUserService;
 import com.bimda.cdshproject.service.exception.ApiException;
 import com.bimda.cdshproject.utils.TimeStampUtil;
@@ -35,7 +35,7 @@ public class AddUserServiceImpl implements IAddUserService {
      * @return
      */
     @Override
-    public UserVO addUser(UserBO bo) {
+    public ContactInfoVO addUser(UserBO bo) {
         try {
             //设置用户编号
             String userId = "SH" + TimeStampUtil.getCurrentTimeMillisName();
@@ -48,7 +48,7 @@ public class AddUserServiceImpl implements IAddUserService {
             //添加通讯录信息
             contactListMapper.insert(bo.getContactList());
             //设置返回对象
-            UserVO vo = new UserVO();
+            ContactInfoVO vo = new ContactInfoVO();
             vo.setUserInfo(bo.getUserInfo());
             vo.setContactList(bo.getContactList());
             return vo;

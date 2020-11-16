@@ -19,7 +19,7 @@ import lombok.Data;
  * 用户信息视图
  */
 @Data
-public class UserVO {
+public class ContactInfoVO {
 
     /**
      * 用户信息
@@ -29,5 +29,5 @@ public class UserVO {
     /**
      * 通讯列表信息
      */
-    private UserContactInfo contactList;
+    private UserContactInfo contactInfo;
 }

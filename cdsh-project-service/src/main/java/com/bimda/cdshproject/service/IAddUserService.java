@@ -1,7 +1,7 @@
 package com.bimda.cdshproject.service;
 
 import com.bimda.cdshproject.pojo.bo.UserBO;
-import com.bimda.cdshproject.pojo.vo.UserVO;
+import com.bimda.cdshproject.pojo.vo.ContactInfoVO;
 
 /**
  * @PACKAGE_NAME: com.bimda.cdshproject.service
@@ -20,5 +20,5 @@ public interface IAddUserService {
      * @param bo
      * @return
      */
-    UserVO addUser(UserBO bo);
+    ContactInfoVO addUser(UserBO bo);
 }
