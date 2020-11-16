@@ -1,47 +1,79 @@
 DROP TABLE IF EXISTS user_info;
 CREATE TABLE user_info(
-    u_id VARCHAR(100) NOT NULL COMMENT 'u_id ÓÃ»§±àºÅ' ,
-    u_name VARCHAR(10) NOT NULL COMMENT 'u_name ÓÃ»§Ãû³Æ' ,
-    u_sex VARCHAR(2)  COMMENT 'u_sex ĞÔ±ğ' ,
-    u_birthday DATE  COMMENT 'u_birthday ÉúÈÕ' ,
-    u_native VARCHAR(20) COMMENT 'u_native ¼®¹á' ,
-		u_face VARCHAR(100) COMMENT 'u_face ÓÃ»§Í·Ïñ',
-    PRIMARY KEY (u_id)
-) COMMENT = 'user_info »áÔ±ĞÅÏ¢±í';
+    user_id VARCHAR(100) NOT NULL   COMMENT 'user_id ç”¨æˆ·ç¼–å·' ,
+    user_name VARCHAR(16) NOT NULL   COMMENT 'user_name ç”¨æˆ·åç§°' ,
+    user_native VARCHAR(50) NOT NULL   COMMENT 'user_native ç”¨æˆ·ç±è´¯' ,
+    user_position VARCHAR(10) NOT NULL   COMMENT 'user_position ç”¨æˆ·èŒä½æ ‡è¯†ç ' ,
+    face_url VARCHAR(100) NOT NULL   COMMENT 'face_url ç”¨æˆ·å¤´åƒ' ,
+    open_id VARCHAR(100) NOT NULL   COMMENT 'open_id å¾®ä¿¡å”¯ä¸€æ ‡è¯†' ,
+    company VARCHAR(40) NOT NULL   COMMENT 'company å…¬å¸' ,
+    user_region VARCHAR(10) NOT NULL   COMMENT 'user_region ç”¨æˆ·åœ°åŒºç¼–å·' ,
+    user_address VARCHAR(100) NOT NULL   COMMENT 'user_address ç”¨æˆ·åœ°å€' ,
+    user_tel VARCHAR(11) NOT NULL   COMMENT 'user_tel ç”¨æˆ·æ‰‹æœºå·' ,
+    cooperate_scope VARCHAR(1000) NOT NULL   COMMENT 'cooperate_scope ä¸šåŠ¡åˆä½œèŒƒå›´' ,
+		user_type INT NOT NULL COMMENT 'user_type ç”¨æˆ·ç±»å‹',
+    PRIMARY KEY (user_id)
+) COMMENT = 'user_info ä¼šå‘˜ä¿¡æ¯è¡¨';
 
+DROP TABLE IF EXISTS user_type;
+CREATE TABLE user_type(
+    type_id INT NOT NULL  AUTO_INCREMENT COMMENT 'type_id ç±»å‹ç¼–å·' ,
+    type_name VARCHAR(30) NOT NULL   COMMENT 'type_name ç±»å‹åç§°' ,
+    PRIMARY KEY (type_id)
+) COMMENT = 'user_type ä¼šå‘˜ç±»å‹è¡¨';
 
-DROP TABLE IF EXISTS  business_card;
+DROP TABLE IF EXISTS business_card;
 CREATE TABLE business_card(
-    card_id VARCHAR(100) NOT NULL COMMENT 'card_id ¿¨Æ¬±àºÅ' ,
-    u_id VARCHAR(100) NOT NULL COMMENT 'u_id ÓÃ»§±àºÅ' ,
-    u_position VARCHAR(10) COMMENT 'u_position Ö°Î»±êÂëÖµ' ,
-    company VARCHAR(32) NOT NULL COMMENT 'company ¹«Ë¾' ,
-    u_tel VARCHAR(11) NOT NULL COMMENT 'u_tel ÊÖ»úºÅ' ,
-    u_region VARCHAR(10) NOT NULL COMMENT 'u_region µØÇøºÅ' ,
-    u_address VARCHAR(100) NOT NULL COMMENT 'u_address ¹«Ë¾µØÖ·' ,
-    website VARCHAR(100) COMMENT 'website ÍøÖ·' ,
-    u_email VARCHAR(50) COMMENT 'u_email ÓÊÏä' ,
-		u_face VARCHAR(100) COMMENT 'u_face ÓÃ»§Í·Ïñ',
-    is_choice VARCHAR(1) COMMENT 'is_choice ÊÇ·ñÑ¡ÓÃ' ,
+    card_id VARCHAR(100) NOT NULL   COMMENT 'card_id å¡ç‰‡ç¼–å·' ,
+    user_id VARCHAR(100) NOT NULL   COMMENT 'user_id ç”¨æˆ·ç¼–å·' ,
+    user_position VARCHAR(10) NOT NULL   COMMENT 'user_position èŒä½æ ‡ç å€¼' ,
+    user_tel VARCHAR(11) NOT NULL   COMMENT 'user_tel æ‰‹æœºå·' ,
+    user_region VARCHAR(10) NOT NULL   COMMENT 'user_region åœ°åŒºå·' ,
+    user_address VARCHAR(100) NOT NULL   COMMENT 'user_address å…¬å¸åœ°å€' ,
+    face_url VARCHAR(100)    COMMENT 'face_url å¤´åƒåœ°å€' ,
+    user_email VARCHAR(50)    COMMENT 'user_email ç”¨æˆ·é‚®ç®±' ,
+    website VARCHAR(100)    COMMENT 'website ç½‘å€' ,
+    create_time DATETIME NOT NULL   COMMENT 'create_time åˆ›å»ºæ—¶é—´' ,
     PRIMARY KEY (card_id)
-) COMMENT = 'business_card µç×ÓÃûÆ¬';
+) COMMENT = 'business_card ç”µå­åç‰‡';
 
+DROP TABLE IF EXISTS user_contact_info;
+CREATE TABLE user_contact_info(
+    user_id VARCHAR(100) NOT NULL   COMMENT 'user_id ç”¨æˆ·ç¼–å·' ,
+    user_fixed_tel VARCHAR(12)    COMMENT 'user_fixed_tel ç”¨æˆ·ç”µè¯å·ç ' ,
+    user_fax VARCHAR(20)    COMMENT 'user_fax ç”¨æˆ·ä¼ çœŸ' ,
+    user_wechat VARCHAR(30)    COMMENT 'user_wechat ç”¨æˆ·å¾®ä¿¡å·' ,
+    user_qq VARCHAR(13)    COMMENT 'user_qq ç”¨æˆ·QQå·' ,
+    user_ali VARCHAR(30)    COMMENT 'user_ali ç”¨æˆ·é˜¿é‡Œæ—ºæ—ºå·' ,
+    user_email VARCHAR(50)    COMMENT 'user_email ç”¨æˆ·é‚®ç®±' ,
+    website VARCHAR(100)    COMMENT 'website ç½‘å€' ,
+    PRIMARY KEY (user_id)
+) COMMENT = 'user_contact_info ç”¨æˆ·è”ç³»ä¿¡æ¯è¡¨';
 
-DROP TABLE IF EXISTS  contact_list;
-CREATE TABLE contact_list(
-    c_id VARCHAR(100) NOT NULL COMMENT 'c_id ±àºÅ' ,
-    u_id VARCHAR(100) NOT NULL COMMENT 'u_id ÓÃ»§±àºÅ' ,
-		u_position VARCHAR(10) NOT NULL 'u_position ³£µÂÉÌ»áµÄÖ°Î»',
-    u_tel VARCHAR(11) NOT NULL COMMENT 'u_tel ÊÖ»úºÅ' ,
-    u_region VARCHAR(10) NOT NULL COMMENT 'u_region µØÇøºÅ' ,
-    u_address VARCHAR(100) NOT NULL COMMENT 'u_address µØÖ·' ,
-		u_fixed_tel VARCHAR(13) COMMENT 'u_fixed_tel ¹Ì»°',
-    u_fax VARCHAR(13)  COMMENT 'u_fax ´«Õæ' ,
-    u_wechat VARCHAR(30) COMMENT 'u_wechat Î¢ĞÅºÅ' ,
-    u_qq VARCHAR(13) COMMENT 'u_qq QQºÅ' ,
-    u_ali VARCHAR(30) COMMENT 'u_ali °¢ÀïÍúÍúºÅ' ,
-    u_email VARCHAR(50) COMMENT 'u_email ÓÊÏä' ,
-    website VARCHAR(100) COMMENT 'website ÍøÖ·' ,
-    PRIMARY KEY (c_id)
-) COMMENT = 'contact_list Í¨Ñ¶Â¼';
+DROP TABLE IF EXISTS approval_info;
+CREATE TABLE approval_info(
+    approveal_id VARCHAR(100) NOT NULL   COMMENT 'approveal_id å®¡æ‰¹ç¼–å·' ,
+    type_id INT NOT NULL   COMMENT 'type_id å®¡æ‰¹ç±»å‹ç¼–å·' ,
+    approveal_content VARCHAR(500) NOT NULL   COMMENT 'approveal_content å®¡æ‰¹å†…å®¹' ,
+    approveal_time DATETIME NOT NULL   COMMENT 'approveal_time å®¡æ‰¹æ—¶é—´' ,
+    approveal_result VARCHAR(1)    COMMENT 'approveal_result å®¡æ‰¹ç»“æœ' ,
+    PRIMARY KEY (approveal_id)
+) COMMENT = 'approval_info å®¡æ‰¹ä¿¡æ¯è¡¨';
+
+DROP TABLE IF EXISTS approval_type;
+CREATE TABLE approval_type(
+    type_id INT NOT NULL AUTO_INCREMENT  COMMENT 'type_id å®¡æ‰¹ç±»å‹ç¼–å·' ,
+    type_name VARCHAR(12) NOT NULL   COMMENT 'type_name å®¡æ‰¹ç±»å‹åç§°' ,
+    PRIMARY KEY (type_id,type_name)
+) COMMENT = 'approval_type å®¡æ‰¹ç±»å‹è¡¨';
+
+DROP TABLE IF EXISTS operation_log;
+CREATE TABLE operation_log(
+    operation_id VARCHAR(50) NOT NULL   COMMENT 'operation_id æ“ä½œç¼–å·' ,
+    operation_content VARCHAR(500) NOT NULL   COMMENT 'operation_content æ“ä½œå†…å®¹' ,
+    operation_time DATE NOT NULL   COMMENT 'operation_time æ“ä½œæ—¶é—´' ,
+    operation_admin VARCHAR(100) NOT NULL   COMMENT 'operation_admin æ“ä½œäººç¼–å·' ,
+    PRIMARY KEY (operation_id)
+) COMMENT = 'operation_log æ“ä½œæ—¥å¿—è¡¨';
 ;
+insert into user_type(type_name) value('å•†ä¼šä¼šå‘˜');
