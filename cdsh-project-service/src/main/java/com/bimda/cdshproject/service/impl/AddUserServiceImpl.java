@@ -2,6 +2,8 @@ package com.bimda.cdshproject.service.impl;
 
 import com.bimda.cdshproject.mapper.UserContactInfoMapper;
 import com.bimda.cdshproject.mapper.UserInfoMapper;
+import com.bimda.cdshproject.pojo.UserContactInfo;
+import com.bimda.cdshproject.pojo.UserInfo;
 import com.bimda.cdshproject.pojo.bo.UserBO;
 import com.bimda.cdshproject.pojo.vo.ContactInfoVO;
 import com.bimda.cdshproject.service.IAddUserService;
@@ -39,18 +41,19 @@ public class AddUserServiceImpl implements IAddUserService {
         try {
             //设置用户编号
             String userId = "SH" + TimeStampUtil.getCurrentTimeMillisName();
-            /*bo.getUserInfo().setUId(userId);
+            UserInfo userInfo = bo.getUserInfo();
+            userInfo.setUserId(userId);
             //添加用户信息
-            userInfoMapper.insert(bo.getUserInfo());
+            userInfoMapper.insert(userInfo);
             //设置用户编号以及通讯录编号
-            bo.getContactList().setCId(TimeStampUtil.getCurrentTimeMillisName());
-            bo.getContactList().setUId(userId);*/
+            UserContactInfo contactInfo = bo.getContactList();
+            contactInfo.setUserId(userId);
             //添加通讯录信息
-            contactListMapper.insert(bo.getContactList());
+            contactListMapper.insert(contactInfo);
             //设置返回对象
             ContactInfoVO vo = new ContactInfoVO();
-            vo.setUserInfo(bo.getUserInfo());
-            /*vo.setContactList(bo.getContactList());*/
+            vo.setUserInfo(userInfo);
+            vo.setContactInfo(contactInfo);
             return vo;
         }catch (Exception e){
             throw new ApiException(e);

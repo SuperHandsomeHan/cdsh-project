@@ -32,7 +32,7 @@ public class UserContactInfoController extends BaseController {
     private IContactListService contactListService;
 
     @GetMapping("/contactList")
-    @ApiOperation(value = "通讯录查询", notes = "通讯录查询，返回的是ContactInfoVO集合",
+    @ApiOperation(value = "用户通讯录查询", notes = "用户通讯录查询，返回的是ContactInfoVO集合",
             httpMethod = "get")
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET})
     public List<ContactInfoVO> contactList(){

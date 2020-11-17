@@ -1,5 +1,6 @@
 package com.bimda.cdshproject.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.bimda.cdshproject.mapper.ContactListMapper;
 import com.bimda.cdshproject.mapper.UserContactInfoMapper;
 import com.bimda.cdshproject.mapper.UserInfoMapper;

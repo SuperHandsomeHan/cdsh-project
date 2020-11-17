@@ -1,5 +1,6 @@
 package com.bimda.cdshproject.pojo;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -25,6 +26,7 @@ public class UserContactInfo {
 
     private static final long serialVersionUID = 1L;
 
+    @TableId
     /** user_id;用户编号 */
     @Id
     @ApiModelProperty("用户编号")
