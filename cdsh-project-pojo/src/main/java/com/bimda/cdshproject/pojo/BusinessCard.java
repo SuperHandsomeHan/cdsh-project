@@ -1,13 +1,15 @@
 package com.bimda.cdshproject.pojo;
 
+import java.time.LocalDateTime;
+import java.io.Serializable;
+
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-
-import java.util.Date;
 
 /**
  * <p>
@@ -15,59 +17,77 @@ import java.util.Date;
  * </p>
  *
  * @author jobob
- * @since 2020-11-11
+ * @since 2020-11-23
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName(value = "business_card")
-public class BusinessCard {
+@EqualsAndHashCode(callSuper = false)
+public class BusinessCard implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    /** card_id;卡片编号 */
-    @Id
+    /**
+     * card_id 卡片编号
+     */
+    @TableId(value = "card_id")
     @ApiModelProperty("卡片编号")
-    private String cardId ;
+    private String cardId;
 
-    /** user_id;用户编号 */
+    /**
+     * user_id 用户编号
+     */
     @ApiModelProperty("用户编号")
-    private String userId ;
+    private String userId;
 
-    /** user_position;职位标码值 */
+    /**
+     * user_position 职位标码值
+     */
     @ApiModelProperty("职位标码值")
-    private String userPosition ;
+    private String userPosition;
 
-    /** company;公司 */
-    @ApiModelProperty("公司")
-    private String company ;
-
-    /** user_tel;手机号 */
+    /**
+     * user_tel 手机号
+     */
     @ApiModelProperty("手机号")
-    private String userTel ;
+    private String userTel;
 
-    /** user_region;地区号 */
+    /**
+     * user_region 地区号
+     */
     @ApiModelProperty("地区号")
-    private String userRegion ;
+    private String userRegion;
 
-    /** user_address;公司地址 */
+    /**
+     * user_address 公司地址
+     */
     @ApiModelProperty("公司地址")
-    private String userAddress ;
+    private String userAddress;
 
-    /** face_url;头像地址 */
-    @ApiModelProperty("头像地址")
-    private String faceUrl ;
+    /**
+     * face_url 头像地址
+     */
+    @ApiModelProperty("头像地址头像地址")
+    private String faceUrl;
 
-    /** user_email;用户邮箱 */
+    /**
+     * user_email 用户邮箱
+     */
     @ApiModelProperty("用户邮箱")
-    private String userEmail ;
+    private String userEmail;
 
-    /** website;网址 */
+    /**
+     * website 网址
+     */
     @ApiModelProperty("网址")
-    private String website ;
+    private String website;
 
-    /** create_time;创建时间 */
+    /**
+     * create_time 创建时间
+     */
     @ApiModelProperty("创建时间")
-    private Date createTime ;
+    private LocalDateTime createTime;
+
 
 }

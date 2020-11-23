@@ -1,7 +1,7 @@
 package com.bimda.cdshproject.mapper;
 
-import com.bimda.cdshproject.pojo.BusinessCard;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.bimda.cdshproject.pojo.BusinessCard;
 
 /**
  * <p>
@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author jobob
- * @since 2020-11-11
+ * @since 2020-11-23
  */
 public interface BusinessCardMapper extends BaseMapper<BusinessCard> {
 

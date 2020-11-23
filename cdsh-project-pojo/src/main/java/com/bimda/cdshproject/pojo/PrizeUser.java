@@ -1,7 +1,5 @@
 package com.bimda.cdshproject.pojo;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -13,7 +11,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * <p>
- * user_type 会员类型表
+ * prize_user 获奖用户表
  * </p>
  *
  * @author jobob
@@ -22,24 +20,29 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName(value = "user_type")
+@TableName(value = "prize_user")
 @EqualsAndHashCode(callSuper = false)
-public class UserType implements Serializable {
+public class PrizeUser implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     /**
-     * type_id 类型编号
+     * prize_id 奖品编号
      */
-    @TableId(value = "type_id", type = IdType.AUTO)
-    @ApiModelProperty("类型编号")
-    private Integer typeId;
+    @ApiModelProperty("奖品编号")
+    private Integer prizeId;
 
     /**
-     * type_name 类型名称
+     * user_id 用户编号
      */
-    @ApiModelProperty("类型名称")
-    private String typeName;
+    @ApiModelProperty("用户编号")
+    private String userId;
+
+    /**
+     * activity_id 活动编号
+     */
+    @ApiModelProperty("活动编号")
+    private String activityId;
 
 
 }

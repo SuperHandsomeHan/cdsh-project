@@ -1,5 +1,8 @@
 package com.bimda.cdshproject.pojo;
 
+import java.time.LocalDateTime;
+import java.io.Serializable;
+
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModelProperty;
@@ -7,9 +10,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-
-import java.time.LocalDate;
 
 /**
  * <p>
@@ -17,63 +17,95 @@ import java.time.LocalDate;
  * </p>
  *
  * @author jobob
- * @since 2020-11-11
+ * @since 2020-11-23
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName(value = "user_info")
-public class UserInfo {
+@EqualsAndHashCode(callSuper = false)
+public class UserInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId
-    /** user_id;用户编号 */
-    @Id
+    /**
+     * user_id 用户编号
+     */
+    @TableId(value = "user_id")
     @ApiModelProperty("用户编号")
-    private String userId ;
+    private String userId;
 
-    /** user_name;用户名称 */
+    /**
+     * user_name 用户名称
+     */
     @ApiModelProperty("用户名称")
-    private String userName ;
+    private String userName;
 
-    /** user_native;用户籍贯 */
+    /**
+     * user_native 用户籍贯
+     */
     @ApiModelProperty("用户籍贯")
-    private String userNative ;
+    private String userNative;
 
-    /** user_position;用户职位标识码 */
+    /**
+     * user_position 用户职位标识码
+     */
     @ApiModelProperty("用户职位标识码")
-    private String userPosition ;
+    private String userPosition;
 
-    /** face_url;用户头像 */
+    /**
+     * face_url 用户头像
+     */
     @ApiModelProperty("用户头像")
-    private String faceUrl ;
+    private String faceUrl;
 
-    /** open_id;微信唯一标识 */
-    @ApiModelProperty("微信唯一标识")
-    private String openId ;
-
-    /** company;公司 */
+    /**
+     * company 公司
+     */
     @ApiModelProperty("公司")
-    private String company ;
+    private String company;
 
-    /** user_region;用户地区编号 */
+    /**
+     * user_region 用户地区编号
+     */
     @ApiModelProperty("用户地区编号")
-    private String userRegion ;
+    private String userRegion;
 
-    /** user_address;用户地址 */
+    /**
+     * user_address 用户地址
+     */
     @ApiModelProperty("用户地址")
-    private String userAddress ;
+    private String userAddress;
 
-    /** user_tel;用户手机号 */
+    /**
+     * user_tel 用户手机号
+     */
     @ApiModelProperty("用户手机号")
-    private String userTel ;
+    private String userTel;
 
-    /** cooperate_scope;业务合作范围 */
+    /**
+     * cooperate_scope 业务合作范围
+     */
     @ApiModelProperty("业务合作范围")
-    private String cooperateScope ;
+    private String cooperateScope;
 
-    /** user_type;用户类型 */
+    /**
+     * user_type 用户类型
+     */
     @ApiModelProperty("用户类型")
-    private Integer userType ;
+    private Integer userType;
+
+    /**
+     * create_time 创建时间
+     */
+    @ApiModelProperty("创建时间")
+    private LocalDateTime createTime;
+
+    /**
+     * create_time 创建人员
+     */
+    @ApiModelProperty("创建人员")
+    private String createAdmin;
+
+
 }

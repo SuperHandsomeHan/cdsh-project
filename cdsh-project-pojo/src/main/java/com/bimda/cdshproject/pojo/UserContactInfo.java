@@ -1,5 +1,7 @@
 package com.bimda.cdshproject.pojo;
 
+import java.io.Serializable;
+
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModelProperty;
@@ -7,58 +9,72 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-
 
 /**
  * <p>
- * contact_list 通讯录
+ * user_contact_info 用户联系信息表
  * </p>
  *
  * @author jobob
- * @since 2020-11-11
+ * @since 2020-11-23
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName(value = "user_contact_info")
-public class UserContactInfo {
+@EqualsAndHashCode(callSuper = false)
+public class UserContactInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId
-    /** user_id;用户编号 */
-    @Id
+    /**
+     * user_id 用户编号
+     */
+    @TableId(value = "userId")
     @ApiModelProperty("用户编号")
-    private String userId ;
+    private String userId;
 
-    /** user_fixed_tel;用户电话号码 */
+    /**
+     * user_fixed_tel 用户电话号码
+     */
     @ApiModelProperty("用户电话号码")
-    private String userFixedTel ;
+    private String userFixedTel;
 
-    /** user_fax;用户传真 */
+    /**
+     * user_fax 用户传真
+     */
     @ApiModelProperty("用户传真")
-    private String userFax ;
+    private String userFax;
 
-    /** user_wechat;用户微信号 */
+    /**
+     * user_wechat 用户微信号
+     */
     @ApiModelProperty("用户微信号")
-    private String userWechat ;
+    private String userWechat;
 
-    /** user_qq;用户QQ号 */
+    /**
+     * user_qq 用户QQ号
+     */
     @ApiModelProperty("用户QQ号")
-    private String userQq ;
+    private String userQq;
 
-    /** user_ali;用户阿里旺旺号 */
+    /**
+     * user_ali 用户阿里旺旺号
+     */
     @ApiModelProperty("用户阿里旺旺号")
-    private String userAli ;
+    private String userAli;
 
-    /** user_email;用户邮箱 */
+    /**
+     * user_email 用户邮箱
+     */
     @ApiModelProperty("用户邮箱")
-    private String userEmail ;
+    private String userEmail;
 
-    /** website;网址 */
+    /**
+     * website 网址
+     */
     @ApiModelProperty("网址")
-    private String website ;
+    private String website;
 
 
 }

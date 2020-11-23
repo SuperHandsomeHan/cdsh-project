@@ -4,14 +4,13 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.bimda.cdshproject.pojo.UserType;
 
 /**
- * @PACKAGE_NAME: com.bimda.cdshproject.mapper
- * @NAME: UserTypeMapper
- * @USER: Han
- * @DATE: 2020/11/16
- * @TIME: 11:53
- * @DAY_NAME_SHORT: 周一
- * @PROJECT_NAME: cdsh-project
- * @Desc:
+ * <p>
+ * user_type 会员类型表 Mapper 接口
+ * </p>
+ *
+ * @author jobob
+ * @since 2020-11-23
  */
 public interface UserTypeMapper extends BaseMapper<UserType> {
+
 }
