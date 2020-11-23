@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import java.io.Serializable;
+import java.util.Date;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModelProperty;
@@ -58,7 +59,7 @@ public class RoleInfo implements Serializable {
      * create_time 创建时间
      */
     @ApiModelProperty("创建时间")
-    private LocalDateTime createTime;
+    private Date createTime;
 
     /**
      * create_admin 创建人

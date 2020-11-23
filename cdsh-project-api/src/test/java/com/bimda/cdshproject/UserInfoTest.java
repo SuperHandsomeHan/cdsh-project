@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -52,7 +53,7 @@ public class UserInfoTest {
         userInfo.setFaceUrl("https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1099335495,2353408217&fm=26&gp=0.jpg");
         userInfo.setCompany("毕梦达科技有限公司");
         userInfo.setCooperateScope("智慧软件");
-        userInfo.setOpenId("0");
+        //userInfo.setOpenId("0");
         userInfo.setUserAddress("白蕉镇白蕉路522号");
         userInfo.setUserName("周慧星");
         userInfo.setUserNative("广东珠海");
@@ -60,6 +61,8 @@ public class UserInfoTest {
         userInfo.setUserRegion("0");
         userInfo.setUserTel("13623262579");
         userInfo.setUserType(1);
+        userInfo.setCreateTime(new Date());
+        userInfo.setCreateAdmin("");
         bo.setUserInfo(userInfo);
         UserContactInfo contactInfo = new UserContactInfo();
         contactInfo.setUserAli("wanglil");
@@ -84,7 +87,7 @@ public class UserInfoTest {
             System.out.println("userId = " + userInfo.getUserId());
             System.out.println("company = " + userInfo.getCompany());
             System.out.println("faceUrl = " + userInfo.getFaceUrl());
-            System.out.println("openId = " + userInfo.getOpenId());
+            //System.out.println("openId = " + userInfo.getOpenId());
             System.out.println("userAddress = " + userInfo.getUserAddress());
             System.out.println("userId = " + userInfo.getUserId());
             System.out.println("cooperateScope = " + userInfo.getCooperateScope());

@@ -2,6 +2,7 @@ package com.bimda.cdshproject.pojo;
 
 import java.time.LocalDateTime;
 import java.io.Serializable;
+import java.util.Date;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -76,7 +77,7 @@ public class ActivityInfo implements Serializable {
      */
     @ApiModelProperty("创建时间")
 
-    private LocalDateTime createTime;
+    private Date createTime;
 
     /**
      * create_admin 创建人

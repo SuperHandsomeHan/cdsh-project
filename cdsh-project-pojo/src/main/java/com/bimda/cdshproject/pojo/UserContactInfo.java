@@ -30,7 +30,7 @@ public class UserContactInfo implements Serializable {
     /**
      * user_id 用户编号
      */
-    @TableId(value = "userId")
+    @TableId(value = "user_id")
     @ApiModelProperty("用户编号")
     private String userId;
 
