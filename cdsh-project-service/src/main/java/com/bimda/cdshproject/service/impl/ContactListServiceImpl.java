@@ -11,7 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @PACKAGE_NAME: com.bimda.cdshproject.service.impl
@@ -41,6 +43,11 @@ public class ContactListServiceImpl implements IContactListService {
             if(typeId ==  null || typeId.length == 0){
                 throw new ApiException("请输入用户类型编号！");
             }
+            Map<String, Object> map = new HashMap<>();
+            for (Integer id : typeId){
+                map.put("user_type" , id);
+            }
+
             list = contactListMapper.listContactInfoByType(typeId);
             return list;
         }catch (Exception e){

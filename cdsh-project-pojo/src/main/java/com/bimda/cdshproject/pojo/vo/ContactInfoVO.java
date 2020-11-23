@@ -4,6 +4,8 @@ import com.bimda.cdshproject.pojo.UserContactInfo;
 import com.bimda.cdshproject.pojo.UserInfo;
 import lombok.Data;
 
+import java.util.List;
+
 /**
  * @PACKAGE_NAME: com.bimda.cdshproject.pojo.vo
  * @NAME: UserVO

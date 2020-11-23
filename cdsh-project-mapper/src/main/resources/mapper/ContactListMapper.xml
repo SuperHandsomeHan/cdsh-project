@@ -33,7 +33,7 @@
     </resultMap>
 
     <select id="listContactInfoByType" resultMap="contactInfoMap">
-        select ui.user_id, ui.user_name, ui.user_native, ui.user_position, ui.face_url, ui.open_id, ui.company,
+        select ui.user_id, ui.user_name, ui.user_native, ui.user_position, ui.face_url, ui.company,
         ui.user_region, ui.user_address, ui.user_tel, ui.cooperate_scope, ui.user_type, uci.user_fixed_tel,
         uci.user_fax, uci.user_wechat, uci.user_qq, uci.user_ali, uci.user_email, uci.website
         from user_info ui left join user_contact_info uci on ui.user_id = uci.user_id
@@ -43,7 +43,7 @@
         </foreach>
     </select>
     <select id="listUserInfoByType" resultMap="userMap">
-        select user_id, user_name, user_native, user_position, face_url, open_id, company,
+        select user_id, user_name, user_native, user_position, face_url, company,
         user_region, user_address, user_tel, cooperate_scope, user_type from user_info
         where user_type in
         <foreach collection="array" item="id" open="(" close=")" separator=",">
