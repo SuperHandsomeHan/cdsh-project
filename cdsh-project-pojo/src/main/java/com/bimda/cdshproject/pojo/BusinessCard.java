@@ -89,5 +89,16 @@ public class BusinessCard implements Serializable {
     @ApiModelProperty("创建时间")
     private LocalDateTime createTime;
 
+    /**
+     * is_default 是否默认
+     */
+    @ApiModelProperty("是否默认")
+    private String isDefault;
+
+    /**
+     * is_open 是否公开
+     */
+    @ApiModelProperty("是否公开")
+    private String isOpen;
 
 }
