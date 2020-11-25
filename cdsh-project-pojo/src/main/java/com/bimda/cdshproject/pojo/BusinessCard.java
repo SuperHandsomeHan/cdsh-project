@@ -2,6 +2,7 @@ package com.bimda.cdshproject.pojo;
 
 import java.time.LocalDateTime;
 import java.io.Serializable;
+import java.util.Date;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -54,16 +55,16 @@ public class BusinessCard implements Serializable {
     private String userTel;
 
     /**
-     * user_region 地区号
+     * company 公司
      */
-    @ApiModelProperty("地区号")
-    private String userRegion;
+    @ApiModelProperty("公司")
+    private String company;
 
     /**
-     * user_address 公司地址
+     * company_address 公司地址
      */
     @ApiModelProperty("公司地址")
-    private String userAddress;
+    private String companyAddress;
 
     /**
      * face_url 头像地址
@@ -84,10 +85,16 @@ public class BusinessCard implements Serializable {
     private String website;
 
     /**
+     * cooperate_scope 业务合作范围
+     */
+    @ApiModelProperty("业务合作范围")
+    private String cooperateScope;
+
+    /**
      * create_time 创建时间
      */
     @ApiModelProperty("创建时间")
-    private LocalDateTime createTime;
+    private Date createTime;
 
     /**
      * is_default 是否默认

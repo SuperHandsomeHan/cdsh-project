@@ -48,10 +48,10 @@ public class OperationLog implements Serializable {
     private LocalDate operationTime;
 
     /**
-     * operation_admin 操作人编号
+     * operation_user 操作人编号
      */
     @ApiModelProperty("操作人编号")
-    private String operationAdmin;
+    private String operationUser;
 
 
 }

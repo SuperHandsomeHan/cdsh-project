@@ -35,9 +35,27 @@ public class UserContactInfo implements Serializable {
     private String userId;
 
     /**
-     * user_fixed_tel 用户电话号码
+     * company 公司
      */
-    @ApiModelProperty("用户电话号码")
+    @ApiModelProperty("公司")
+    private String company;
+
+    /**
+     * company_address 公司地址
+     */
+    @ApiModelProperty("公司地址")
+    private String companyAddress;
+
+    /**
+     * user_tel 用户手机号
+     */
+    @ApiModelProperty("用户手机号")
+    private String userTel;
+
+    /**
+     * user_fixed_tel 用户固话
+     */
+    @ApiModelProperty("用户固话")
     private String userFixedTel;
 
     /**
@@ -76,5 +94,10 @@ public class UserContactInfo implements Serializable {
     @ApiModelProperty("网址")
     private String website;
 
+    /**
+     * cooperate_scope 业务合作范围
+     */
+    @ApiModelProperty("业务合作范围")
+    private String cooperateScope;
 
 }

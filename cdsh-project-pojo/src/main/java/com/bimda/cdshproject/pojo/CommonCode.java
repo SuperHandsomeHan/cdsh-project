@@ -30,17 +30,16 @@ public class CommonCode implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * common_id 序号
-     */
-    @TableId(value = "common_id")
-    @ApiModelProperty("序号")
-    private Integer commonId;
-
-    /**
-     * common_code 标识代码
+     * code_num 标识代码
      */
     @ApiModelProperty("标识代码")
-    private String commonCode;
+    private String codeNum;
+
+    /**
+     * code_type 代码类型
+     */
+    @ApiModelProperty("代码类型")
+    private String codeType;
 
     /**
      * common_remark 备注

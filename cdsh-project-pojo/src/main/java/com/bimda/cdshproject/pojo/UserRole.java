@@ -1,9 +1,8 @@
 package com.bimda.cdshproject.pojo;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -13,7 +12,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * <p>
- * user_type 会员类型表
+ * user_role 用户角色表
  * </p>
  *
  * @author jobob
@@ -22,24 +21,23 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName(value = "user_type")
+@TableName(value = "user_role")
 @EqualsAndHashCode(callSuper = false)
-public class UserType implements Serializable {
+public class UserRole implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     /**
-     * type_id 类型编号
+     * user_id 用户编号
      */
-    @TableId(value = "type_id", type = IdType.AUTO)
-    @ApiModelProperty("类型编号")
-    private Integer typeId;
+    @ApiModelProperty("用户编号")
+    private String userId;
 
     /**
-     * type_name 类型名称
+     * role_id 角色编号
      */
-    @ApiModelProperty("类型名称")
-    private String typeName;
+    @ApiModelProperty("角色编号")
+    private Integer roleId;
 
 
 }

@@ -43,6 +43,12 @@ public class UserInfo implements Serializable {
     private String userName;
 
     /**
+     * face_url 用户头像
+     */
+    @ApiModelProperty("用户头像")
+    private String faceUrl;
+
+    /**
      * user_native 用户籍贯
      */
     @ApiModelProperty("用户籍贯")
@@ -55,58 +61,16 @@ public class UserInfo implements Serializable {
     private String userPosition;
 
     /**
-     * face_url 用户头像
-     */
-    @ApiModelProperty("用户头像")
-    private String faceUrl;
-
-    /**
-     * company 公司
-     */
-    @ApiModelProperty("公司")
-    private String company;
-
-    /**
-     * user_region 用户地区编号
-     */
-    @ApiModelProperty("用户地区编号")
-    private String userRegion;
-
-    /**
-     * user_address 用户地址
-     */
-    @ApiModelProperty("用户地址")
-    private String userAddress;
-
-    /**
-     * user_tel 用户手机号
-     */
-    @ApiModelProperty("用户手机号")
-    private String userTel;
-
-    /**
-     * cooperate_scope 业务合作范围
-     */
-    @ApiModelProperty("业务合作范围")
-    private String cooperateScope;
-
-    /**
-     * user_type 用户类型
-     */
-    @ApiModelProperty("用户类型")
-    private Integer userType;
-
-    /**
      * create_time 创建时间
      */
     @ApiModelProperty("创建时间")
     private Date createTime;
 
     /**
-     * create_time 创建人员
+     * create_user 创建人员
      */
     @ApiModelProperty("创建人员")
-    private String createAdmin;
+    private String createUser;
 
 
 }

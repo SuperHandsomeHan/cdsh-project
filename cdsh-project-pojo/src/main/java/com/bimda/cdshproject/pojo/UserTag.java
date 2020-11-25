@@ -1,8 +1,5 @@
 package com.bimda.cdshproject.pojo;
 
-import java.io.Serializable;
-
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -12,32 +9,36 @@ import lombok.NoArgsConstructor;
 
 /**
  * <p>
- * admin_role 管理员角色表
+ * user_tag 用户标签表
  * </p>
  *
- * @author jobob
- * @since 2020-11-23
+ * @PACKAGE_NAME: com.bimda.cdshproject.pojo
+ * @NAME: UserTag
+ * @USER: Han
+ * @DATE: 2020/11/25
+ * @TIME: 14:51
+ * @DAY_NAME_SHORT: 周三
+ * @PROJECT_NAME: cdsh-project
+ * @Desc:
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName(value = "admin_role")
+@TableName(value = "user_tag")
 @EqualsAndHashCode(callSuper = false)
-public class AdminRole implements Serializable {
+public class UserTag {
 
     private static final long serialVersionUID = 1L;
 
     /**
-     * admin_id 管理员编号
+     * user_id 用户编号
      */
-    @ApiModelProperty("管理员编号")
-    private String adminId;
+    @ApiModelProperty("用户编号")
+    private String userId;
 
     /**
-     * role_id 角色编号
+     * type_id 类型编号
      */
-    @ApiModelProperty("角色编号")
-    private Integer roleId;
-
-
+    @ApiModelProperty("类型编号")
+    private String typeId;
 }

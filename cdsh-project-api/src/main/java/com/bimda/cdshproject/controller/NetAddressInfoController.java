@@ -7,16 +7,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @PACKAGE_NAME: com.bimda.cdshproject.controller
- * @NAME: UserTypeController
+ * @NAME: NetAddressInfoController
  * @USER: Han
- * @DATE: 2020/11/16
- * @TIME: 11:56
- * @DAY_NAME_SHORT: 周一
+ * @DATE: 2020/11/25
+ * @TIME: 15:27
+ * @DAY_NAME_SHORT: 周三
  * @PROJECT_NAME: cdsh-project
  * @Desc:
  */
 @RestController
-@RequestMapping("/bimda/user-type")
-@Api(value = "会员类型接口", tags = "会员类型模块接口")
-public class UserTypeController extends BaseController {
+@RequestMapping("/net-address-info")
+@Api(value = "互联网地址信息接口", tags = "互联网地址信息模块接口")
+public class NetAddressInfoController extends BaseController {
 }
