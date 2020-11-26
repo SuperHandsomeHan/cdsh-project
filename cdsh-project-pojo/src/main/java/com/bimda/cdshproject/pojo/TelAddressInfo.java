@@ -13,11 +13,11 @@ import java.util.Date;
 
 /**
  * <p>
- * net_address_info 互联网地址信息表
+ * tel_address_info 电话地址信息表
  * </p>
  *
  * @PACKAGE_NAME: com.bimda.cdshproject.pojo
- * @NAME: NetAddressInfo
+ * @NAME: TelAddressInfo
  * @USER: Han
  * @DATE: 2020/11/25
  * @TIME: 14:59
@@ -28,9 +28,9 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName(value = "net_address_info")
+@TableName(value = "tel_address_info")
 @EqualsAndHashCode(callSuper = false)
-public class NetAddressInfo implements Serializable {
+public class TelAddressInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -42,10 +42,16 @@ public class NetAddressInfo implements Serializable {
     private String addressId;
 
     /**
-     * address_content 地址内容
+     * address_tel 手机/电话号
      */
-    @ApiModelProperty("地址内容")
-    private String addressContent;
+    @ApiModelProperty("手机/电话号")
+    private String addressTel;
+
+    /**
+     * address_semicolon 电话分号
+     */
+    @ApiModelProperty("电话分号")
+    private String addressSemicolon;
 
     /**
      * contant_type 联系地址类型

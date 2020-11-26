@@ -1,8 +1,4 @@
-package com.bimda.cdshproject.pojo;
-
-import java.time.LocalDateTime;
-import java.io.Serializable;
-import java.util.Date;
+package com.bimda.cdshproject.pojo.vo;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -11,6 +7,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * <p>
@@ -21,14 +20,7 @@ import lombok.NoArgsConstructor;
  * @since 2020-11-23
  */
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@TableName(value = "business_card")
-@EqualsAndHashCode(callSuper = false)
-public class BusinessCard implements Serializable {
-
-    private static final long serialVersionUID = 1L;
-
+public class BusinessCardVO{
     /**
      * card_id 卡片编号
      */
@@ -49,10 +41,40 @@ public class BusinessCard implements Serializable {
     private String userPosition;
 
     /**
+     * user_tel 手机号
+     */
+    @ApiModelProperty("手机号")
+    private String userTel;
+
+    /**
+     * company 公司
+     */
+    @ApiModelProperty("公司")
+    private String company;
+
+    /**
+     * company_address 公司地址
+     */
+    @ApiModelProperty("公司地址")
+    private String companyAddress;
+
+    /**
      * face_url 头像地址
      */
     @ApiModelProperty("头像地址头像地址")
     private String faceUrl;
+
+    /**
+     * user_email 用户邮箱
+     */
+    @ApiModelProperty("用户邮箱")
+    private String userEmail;
+
+    /**
+     * website 网址
+     */
+    @ApiModelProperty("网址")
+    private String website;
 
     /**
      * cooperate_scope 业务合作范围

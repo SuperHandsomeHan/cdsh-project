@@ -17,15 +17,12 @@ CREATE TABLE user_info(
     user_id VARCHAR(20) NOT NULL COMMENT 'user_id 用户编号' ,
     user_name VARCHAR(16) NOT NULL COMMENT 'user_name 用户名称' ,
     user_native VARCHAR(50) NOT NULL COMMENT 'user_native 用户籍贯' ,
-    user_position VARCHAR(30) NOT NULL COMMENT 'user_position 用户职位标识码' ,
+    user_position VARCHAR(30) NOT NULL COMMENT 'user_position 用户职位名称' ,
     face_url VARCHAR(100) NOT NULL COMMENT 'face_url 用户头像' ,
-    company VARCHAR(20) NOT NULL COMMENT 'company 公司' ,
-    user_address VARCHAR(20) NOT NULL COMMENT 'user_address 用户地址' ,
-    user_tel VARCHAR(20) NOT NULL COMMENT 'user_tel 用户手机号' ,
 		create_time DATETIME NOT NULL COMMENT 'create_time 创建时间',
 		create_user VARCHAR(20) NOT NULL COMMENT 'create_time 创建人员',
     PRIMARY KEY (user_id)
-) COMMENT = 'user_info 会员信息表';
+) COMMENT = 'user_info 用户信息表';
 
 DROP TABLE IF EXISTS common_code;
 CREATE TABLE common_code(
@@ -59,13 +56,8 @@ DROP TABLE IF EXISTS business_card;
 CREATE TABLE business_card(
     card_id VARCHAR(20) NOT NULL COMMENT 'card_id 卡片编号' ,
     user_id VARCHAR(20) NOT NULL COMMENT 'user_id 用户编号' ,
-    user_position VARCHAR(30) NOT NULL COMMENT 'user_position 职位标码值' ,
-    user_tel VARCHAR(20) NOT NULL COMMENT 'user_tel 手机号' ,
-		company VARCHAR(20) NOT NULL COMMENT 'company 公司' ,
-    company_address VARCHAR(20) NOT NULL COMMENT 'company_address 公司地址' ,
-    face_url VARCHAR(100) COMMENT 'face_url 头像地址' ,
-    user_email VARCHAR(20) COMMENT 'user_email 用户邮箱' ,
-    website VARCHAR(20) COMMENT 'website 网址' ,
+    user_position VARCHAR(30) NOT NULL COMMENT 'user_position 职位名称' ,
+		face_url VARCHAR(100) NOT NULL COMMENT 'face_url 用户头像' ,
 		cooperate_scope VARCHAR(256) NOT NULL COMMENT 'cooperate_scope 业务合作范围',
     create_time DATETIME NOT NULL COMMENT 'create_time 创建时间' ,
 		is_default VARCHAR(1) NOT NULL COMMENT 'is_default 是否默认',
@@ -76,16 +68,6 @@ CREATE TABLE business_card(
 DROP TABLE IF EXISTS user_contact_info;
 CREATE TABLE user_contact_info(
     user_id VARCHAR(20) NOT NULL COMMENT 'user_id 用户编号' ,
-		company VARCHAR(20) NOT NULL COMMENT 'company 公司' ,
-		company_address VARCHAR(20) NOT NULL COMMENT 'user_id 公司地址' ,
-		user_tel VARCHAR(20) NOT NULL COMMENT 'user_id 用户手机号' ,
-    user_fixed_tel VARCHAR(20) COMMENT 'user_fixed_tel 用户电话号码' ,
-    user_fax VARCHAR(20) COMMENT 'user_fax 用户传真' ,
-    user_wechat VARCHAR(20) COMMENT 'user_wechat 用户微信号' ,
-    user_qq VARCHAR(20) COMMENT 'user_qq 用户QQ号' ,
-    user_ali VARCHAR(20) COMMENT 'user_ali 用户阿里旺旺号' ,
-    user_email VARCHAR(20) COMMENT 'user_email 用户邮箱' ,
-    website VARCHAR(20) COMMENT 'website 网址' ,
 		cooperate_scope VARCHAR(256) NOT NULL COMMENT 'cooperate_scope 业务合作范围',
     PRIMARY KEY (user_id)
 ) COMMENT = 'user_contact_info 用户联系信息表';
@@ -108,6 +90,28 @@ CREATE TABLE net_address_info(
 		create_time DATETIME NOT NULL COMMENT 'create_time 创建时间',
 		PRIMARY KEY (address_id)
 ) COMMENT = 'net_address_info 互联网地址信息表';
+
+DROP TABLE IF EXISTS phy_address_info;
+CREATE TABLE phy_address_info(
+		address_id VARCHAR(20) NOT NULL COMMENT 'address_id 地址编号',
+		address_area VARCHAR(8) NOT NULL COMMENT 'address_area 地区区号',
+		address_content VARCHAR(100) NOT NULL COMMENT 'address_content 地址内容',
+		contant_type VARCHAR(8) NOT NULL COMMENT 'contant_type 联系地址类型',
+		user_id VARCHAR(20) NOT NULL COMMENT 'user_id 用户编号',
+		create_time DATETIME NOT NULL COMMENT 'create_time 创建时间',
+		PRIMARY KEY (address_id)
+) COMMENT = 'phy_address_info 物理地址信息表';
+
+DROP TABLE IF EXISTS tel_address_info;
+CREATE TABLE tel_address_info(
+		address_id VARCHAR(20) NOT NULL COMMENT 'address_id 地址编号',
+		address_tel VARCHAR(13) NOT NULL COMMENT 'address_content 手机/电话号',
+		address_semicolon VARCHAR(5) COMMENT 'address_semicolon 电话分号',
+		contant_type VARCHAR(8) NOT NULL COMMENT 'contant_type 联系地址类型',
+		user_id VARCHAR(20) NOT NULL COMMENT 'user_id 用户编号',
+		create_time DATETIME NOT NULL COMMENT 'create_time 创建时间',
+		PRIMARY KEY (address_id)
+) COMMENT = 'tel_address_info 电话地址信息表';
 
 DROP TABLE IF EXISTS role_info;
 CREATE TABLE role_info(

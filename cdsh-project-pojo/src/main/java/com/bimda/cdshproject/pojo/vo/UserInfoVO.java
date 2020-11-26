@@ -1,8 +1,4 @@
-package com.bimda.cdshproject.pojo;
-
-import java.time.LocalDateTime;
-import java.io.Serializable;
-import java.util.Date;
+package com.bimda.cdshproject.pojo.vo;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -12,23 +8,16 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+import java.util.Date;
+
 /**
- * <p>
- * user_info 用户信息表
- * </p>
  *
  * @author jobob
  * @since 2020-11-23
  */
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@TableName(value = "user_info")
-@EqualsAndHashCode(callSuper = false)
-public class UserInfo implements Serializable {
-
-    private static final long serialVersionUID = 1L;
-
+public class UserInfoVO{
     /**
      * user_id 用户编号
      */

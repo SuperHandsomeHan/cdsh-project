@@ -13,11 +13,11 @@ import java.util.Date;
 
 /**
  * <p>
- * net_address_info 互联网地址信息表
+ * phy_address_info 物理地址信息表
  * </p>
  *
  * @PACKAGE_NAME: com.bimda.cdshproject.pojo
- * @NAME: NetAddressInfo
+ * @NAME: PhyAddressInfo
  * @USER: Han
  * @DATE: 2020/11/25
  * @TIME: 14:59
@@ -28,9 +28,9 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName(value = "net_address_info")
+@TableName(value = "phy_address_info")
 @EqualsAndHashCode(callSuper = false)
-public class NetAddressInfo implements Serializable {
+public class PhyAddressInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -40,6 +40,12 @@ public class NetAddressInfo implements Serializable {
     @TableId(value = "address_id")
     @ApiModelProperty("地址编号")
     private String addressId;
+
+    /**
+     * address_area 地区区号
+     */
+    @ApiModelProperty("地区区号")
+    private String addressArea;
 
     /**
      * address_content 地址内容
