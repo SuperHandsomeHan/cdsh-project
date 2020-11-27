@@ -2,6 +2,7 @@ package com.bimda.cdshproject.mapper;
 
 import com.bimda.cdshproject.pojo.UserInfo;
 import com.bimda.cdshproject.pojo.vo.ContactInfoVO;
+import com.bimda.cdshproject.pojo.vo.UserInfoVO;
 
 import java.util.List;
 
@@ -19,21 +20,14 @@ public interface ContactListMapper {
 
     /**
      * 根据类型编号查询所有联系人信息
-     * @param typeId 类型编号
+     * @param roleId 类型编号
      * @return
      */
-    List<ContactInfoVO> listContactInfoByType(Integer ... typeId);
-
-    /**
-     * 根据类型编号查询所有联系人信息
-     * @param typeId 类型编号
-     * @return
-     */
-    List<UserInfo> listUserInfoByType(Integer ... typeId);
+    List<UserInfoVO> listContactInfoByRoleId(Integer ... roleId);
 
     /**
      * 查询所有联系人信息
      * @return
      */
-    List<ContactInfoVO> listContactInfo();
+    List<UserInfoVO> listContactInfo();
 }

@@ -62,10 +62,10 @@ public class RoleInfo implements Serializable {
     private Date createTime;
 
     /**
-     * create_admin 创建人
+     * create_user 创建人
      */
     @ApiModelProperty("创建人")
-    private String createAdmin;
+    private String createUser;
 
 
 }

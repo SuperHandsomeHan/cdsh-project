@@ -57,7 +57,7 @@ public class UserInfo implements Serializable {
     /**
      * user_position 用户职位标识码
      */
-    @ApiModelProperty("用户职位标识码")
+    @ApiModelProperty("用户职位名称")
     private String userPosition;
 
     /**
