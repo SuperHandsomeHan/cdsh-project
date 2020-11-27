@@ -49,6 +49,11 @@ public class UserInfoTest {
 
     @Test
     public void test(){
+        System.out.println(1);
+    }
+
+    /*@Test
+    public void test(){
         UserInfo userInfo = service.selectUserById("1");
         if (userInfo == null){
             System.out.println(1);
@@ -119,5 +124,5 @@ public class UserInfoTest {
             System.out.println("roleId = " + vo.getRoleId());
             System.out.println("roleNae = " + vo.getRoleName());
         }
-    }
+    }*/
 }

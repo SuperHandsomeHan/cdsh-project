@@ -2,14 +2,12 @@ package com.bimda.cdshproject.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.bimda.cdshproject.BaseController;
-import com.bimda.cdshproject.config.HttpUtil;
 import com.bimda.cdshproject.controller.vo.ResponseVO;
 import com.bimda.cdshproject.pojo.vo.WeChatAppletVO;
 import com.bimda.cdshproject.resoures.GetWeChatAppletCredentials;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.configurationprocessor.json.JSONException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,9 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import java.io.IOException;
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 
