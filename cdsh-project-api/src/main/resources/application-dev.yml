@@ -7,10 +7,11 @@ spring:
     password: Bm@@#2020
     #password: qq520340
   redis:
-    database: 1
-    host: 47.94.40.248
+    host: 14.21.59.78
     port: 6379
-    password: ls123456.
 mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+wechat:
+  appId: wx2f140e23ed3eb974
+  secretKey: 248854f0e23a84ce1774d45244fd1db0

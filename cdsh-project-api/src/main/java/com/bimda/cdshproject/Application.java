@@ -17,7 +17,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  * @Desc:
  */
 @SpringBootApplication
-@MapperScan(basePackages = {"com.bimda.cdshproject.mapper", "com.baomidou.mybatisplus.samples.quickstart.mapper"})
+@MapperScan(basePackages = "com.bimda.cdshproject.mapper")
 //扫描所有包以及相关组件包
 //@ComponentScan( basePackages = {"com.imooc","org.n3r.idworker"})
 @EnableScheduling

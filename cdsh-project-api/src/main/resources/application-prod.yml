@@ -9,3 +9,6 @@ spring:
     host: 182.92.113.189
     port: 6379
     password: ls123456.
+wechat:
+  appId: wx2f140e23ed3eb974
+  secretKey: 248854f0e23a84ce1774d45244fd1db0

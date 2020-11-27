@@ -21,7 +21,6 @@ import org.springframework.web.client.RestTemplate;
  */
 @Configuration
 public class RestConfig {
-
     /**
      * 装配连接管理器
      * @return
