@@ -25,21 +25,21 @@ public class BaseController<T> {
     @Autowired
     private RedisOperator redisOperator;
 
-    /**
-     * 管理员token
-     * @param adminInfo
-     * @return
-     */
-    public AdminVO conventAdminVO(AdminInfo adminInfo){
-        //  生成用户token，存入redis会话
-        //REDIS会话
-        String uniqueToken = UUID.randomUUID().toString().trim();
-        redisOperator.set(REDIS_USER_TOKEN+":"+""+adminInfo.getAdminId(), uniqueToken);
-        AdminVO vo = new AdminVO();
-        BeanUtils.copyProperties(adminInfo, vo);
-        vo.setSetAdminUniqueToken(uniqueToken);
-        return vo;
-    }
+//    /**
+//     * 管理员token
+//     * @param adminInfo
+//     * @return
+//     */
+//    public AdminVO conventAdminVO(AdminInfo adminInfo){
+//        //  生成用户token，存入redis会话
+//        //REDIS会话
+//        String uniqueToken = UUID.randomUUID().toString().trim();
+//        redisOperator.set(REDIS_USER_TOKEN+":"+""+adminInfo.getAdminId(), uniqueToken);
+//        AdminVO vo = new AdminVO();
+//        BeanUtils.copyProperties(adminInfo, vo);
+//        vo.setSetAdminUniqueToken(uniqueToken);
+//        return vo;
+//    }
 
     public static  final File FILEPATH = new File("export" + File.separator);
     protected ResponseVO fail(Integer code, Object message){

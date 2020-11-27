@@ -17,11 +17,11 @@ import java.util.List;
 public interface IContactListService {
 
     /**
-     * 根据会员类型编号查询所有联系人
-     * @param typeId 类型编号
+     * 根据角色编号编号查询所有联系人
+     * @param roleIds 所有角色编号
      * @return
      */
-    List<ContactInfoVO> listContactInfoByType(Integer ... typeId);
+    List<ContactInfoVO> listContactInfoByRoleId(Integer ... roleIds);
 
     /**
      * 查询所有联系人

@@ -3,10 +3,14 @@ package com.bimda.cdshproject;
 import com.bimda.cdshproject.pojo.UserContactInfo;
 import com.bimda.cdshproject.pojo.UserInfo;
 import com.bimda.cdshproject.pojo.bo.UserBO;
+import com.bimda.cdshproject.pojo.bo.UserRoleBO;
 import com.bimda.cdshproject.pojo.vo.ContactInfoVO;
+import com.bimda.cdshproject.pojo.vo.UserRoleVO;
 import com.bimda.cdshproject.service.IAddUserService;
+import com.bimda.cdshproject.service.IAssignRolesService;
 import com.bimda.cdshproject.service.IContactListService;
 import com.bimda.cdshproject.service.IUserInfoService;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +32,7 @@ import java.util.List;
  */
 @SpringBootTest(classes = Application.class)
 @RunWith(SpringRunner.class)
+@Slf4j
 public class UserInfoTest {
     @Autowired
     private IUserInfoService service;
@@ -36,7 +41,11 @@ public class UserInfoTest {
     private IAddUserService addUserService;
 
     @Autowired
+    private IAssignRolesService assignRolesService;
+
+    @Autowired
     private IContactListService contactListService;
+
 
     @Test
     public void test(){
@@ -47,66 +56,68 @@ public class UserInfoTest {
     }
 
     @Test
-    public void test2(){
+    public void addUser(){
         UserBO bo = new UserBO();
-        UserInfo userInfo = new UserInfo();
-        userInfo.setFaceUrl("https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1099335495,2353408217&fm=26&gp=0.jpg");
-        userInfo.setCompany("毕梦达科技有限公司");
-        userInfo.setCooperateScope("智慧软件");
+        bo.setFaceUrl("https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1099335495,2353408217&fm=26&gp=0.jpg");
+        bo.setCompany("毕梦达科技有限公司");
+        bo.setCooperateScope("智慧软件");
         //userInfo.setOpenId("0");
-        userInfo.setUserAddress("白蕉镇白蕉路522号");
-        userInfo.setUserName("陈冠希");
-        userInfo.setUserNative("广东珠海");
-        userInfo.setUserPosition("0");
-        userInfo.setUserRegion("0");
-        userInfo.setUserTel("13723262578");
-        userInfo.setUserType(1);
-        userInfo.setCreateTime(new Date());
-        userInfo.setCreateAdmin("");
-        bo.setUserInfo(userInfo);
-        UserContactInfo contactInfo = new UserContactInfo();
-        contactInfo.setUserAli("wanglili");
-        contactInfo.setUserEmail("13723262578@qq.com");
-        contactInfo.setUserFax("0756-5779632");
-        contactInfo.setUserFixedTel("0756-5779632");
-        contactInfo.setUserQq("3594421121");
-        contactInfo.setUserWechat("chengx");
-        contactInfo.setWebsite("https://www.baidu.com");
-        bo.setContactList(contactInfo);
+        bo.setCompanyAddress("白蕉镇白蕉路522号");
+        bo.setUserName("周德发");
+        bo.setUserNative("广东珠海");
+        bo.setUserPosition("老板");
+        bo.setCompanyArea("0");
+        bo.setUserTel("13523262541");
+        bo.setCreateTime(new Date());
+        bo.setCreateUser("");
+        bo.setUserAli("wsaagl");
+        bo.setUserEmail("13523262541@qq.com");
+        bo.setUserFax("0756-5979611");
+        bo.setUserFixedTel("0756-5979611");
+        bo.setUserQq("7594421489");
+        bo.setUserWechat("zhoudf");
+        bo.setWebsite("https://www.baidu.com");
         ContactInfoVO vo = addUserService.addUser(bo);
-        System.out.println("userInfo - userId = " + vo.getUserInfo().getUserId());
-        System.out.println("contactInfo - userId = " + vo.getContactInfo().getUserId());
+        System.out.println("userInfo - userId = " + vo.getUserId());
     }
 
     @Test
-    public void test3(){
-        List<ContactInfoVO> list = contactListService.listContactInfoByType(1);
+    public void listUser(){
+        List<ContactInfoVO> list = contactListService.listContactInfoByRoleId(2);
         for (ContactInfoVO vo : list){
-            UserInfo userInfo = vo.getUserInfo();
-            System.out.println("userInfo ----------------");
-            System.out.println("userId = " + userInfo.getUserId());
-            System.out.println("company = " + userInfo.getCompany());
-            System.out.println("faceUrl = " + userInfo.getFaceUrl());
+            System.out.println("userInfo " + vo.getUserId() + " ----------------");
+            System.out.println("company = " + vo.getCompany());
+            System.out.println("faceUrl = " + vo.getFaceUrl());
             //System.out.println("openId = " + userInfo.getOpenId());
-            System.out.println("userAddress = " + userInfo.getUserAddress());
-            System.out.println("userId = " + userInfo.getUserId());
-            System.out.println("cooperateScope = " + userInfo.getCooperateScope());
-            System.out.println("userName = " + userInfo.getUserName());
-            System.out.println("userNative = " + userInfo.getUserNative());
-            System.out.println("userPosition = " + userInfo.getUserPosition());
-            System.out.println("userRegion = " + userInfo.getUserRegion());
-            System.out.println("userTel = " + userInfo.getUserTel());
-            System.out.println("userType = " + userInfo.getUserType());
+            System.out.println("userAddress = " + vo.getCompanyAddress());
+            System.out.println("userId = " + vo.getUserId());
+            System.out.println("cooperateScope = " + vo.getCooperateScope());
+            System.out.println("userName = " + vo.getUserName());
+            System.out.println("userNative = " + vo.getUserNative());
+            System.out.println("userPosition = " + vo.getUserPosition());
+            System.out.println("userRegion = " + vo.getCompanyArea());
+            System.out.println("userTel = " + vo.getUserTel());
             System.out.println("contactInfo ----------------");
-            UserContactInfo contactInfo = vo.getContactInfo();
-            System.out.println("userId = " + contactInfo.getUserId());
-            System.out.println("userAli = " + contactInfo.getUserAli());
-            System.out.println("userEmail = " + contactInfo.getUserEmail());
-            System.out.println("userFax = " + contactInfo.getUserFax());
-            System.out.println("userFixedTel = " + contactInfo.getUserFixedTel());
-            System.out.println("userQq = " + contactInfo.getUserQq());
-            System.out.println("userId = " + contactInfo.getUserWechat());
-            System.out.println("website = " + contactInfo.getWebsite());
+            System.out.println("userAli = " + vo.getUserAli());
+            System.out.println("userEmail = " + vo.getUserEmail());
+            System.out.println("userFax = " + vo.getUserFax());
+            System.out.println("userFixedTel = " + vo.getUserFixedTel());
+            System.out.println("userQq = " + vo.getUserQq());
+            System.out.println("userWechat = " + vo.getUserWechat());
+            System.out.println("website = " + vo.getWebsite());
+        }
+    }
+
+    @Test
+    public void assignRoles(){
+        UserRoleBO bo = new UserRoleBO();
+        bo.setUserId("SH20201127094012");
+        Integer[] roleIds = {2, 3};
+        bo.setRoleIds(roleIds);
+        List<UserRoleVO> list = assignRolesService.assignRoles(bo);
+        for (UserRoleVO vo : list){
+            System.out.println("roleId = " + vo.getRoleId());
+            System.out.println("roleNae = " + vo.getRoleName());
         }
     }
 }

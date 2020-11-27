@@ -2,6 +2,7 @@ package com.bimda.cdshproject.controller;
 
 
 import com.bimda.cdshproject.BaseController;
+import com.bimda.cdshproject.controller.vo.ResponseVO;
 import com.bimda.cdshproject.pojo.vo.ContactInfoVO;
 import com.bimda.cdshproject.service.IContactListService;
 import com.bimda.cdshproject.service.IUserContactInfoService;
@@ -31,14 +32,27 @@ public class UserContactInfoController extends BaseController {
     @Autowired
     private IContactListService contactListService;
 
-    @GetMapping("/contactList")
+    @GetMapping("/contacts/role")
+    @ApiOperation(value = "根据角色编号查询用户通讯录", notes = "根据角色编号查询用户通讯录，返回的是ContactInfoVO集合",
+            httpMethod = "get")
+    @ApiImplicitParams({
+            @ApiImplicitParam( name = "roleIds",value = "角色编号数组",required = true),
+    })
+    @CrossOrigin(origins = "*", methods = {RequestMethod.GET})
+    public ResponseVO contactListByRoleId(Integer[] roleIds){
+        List<ContactInfoVO> list = new ArrayList<>();
+        list = contactListService.listContactInfoByRoleId(roleIds);
+        return success(list);
+    }
+
+    @GetMapping("/contacts")
     @ApiOperation(value = "用户通讯录查询", notes = "用户通讯录查询，返回的是ContactInfoVO集合",
             httpMethod = "get")
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET})
-    public List<ContactInfoVO> contactList(){
+    public ResponseVO contactList(){
         List<ContactInfoVO> list = new ArrayList<>();
-        list = contactListService.listContactInfoByType(1);
-        return contactList();
+        list = contactListService.listContactInfo();
+        return success(list);
     }
 
 }
