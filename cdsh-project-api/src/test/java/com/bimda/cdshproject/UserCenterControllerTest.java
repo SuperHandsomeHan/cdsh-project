@@ -1,22 +1,9 @@
 package com.bimda.cdshproject;
 
-import com.alibaba.fastjson.JSONObject;
-import com.bimda.cdshproject.controller.LoginController;
-import com.bimda.cdshproject.pojo.vo.WeChatAppletVO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.web.client.RestTemplate;
-
-import java.io.IOException;
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.Callable;
 
 /**
  * @PACKAGE_NAME: com.bimda.cdshproject
@@ -30,7 +17,7 @@ import java.util.concurrent.Callable;
  */
 @SpringBootTest()
 @RunWith(SpringRunner.class)
-public class LoginControllerTest{
+public class UserCenterControllerTest {
     /*@Autowired
     private RestTemplate restTemplate;
     @Test

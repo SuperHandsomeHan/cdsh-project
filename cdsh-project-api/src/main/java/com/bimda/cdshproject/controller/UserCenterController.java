@@ -1,10 +1,15 @@
 package com.bimda.cdshproject.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.bimda.cdshproject.BaseController;
 import com.bimda.cdshproject.controller.vo.ResponseVO;
+import com.bimda.cdshproject.pojo.UserRelation;
+import com.bimda.cdshproject.pojo.UserRole;
 import com.bimda.cdshproject.pojo.vo.WeChatAppletVO;
 import com.bimda.cdshproject.resoures.GetWeChatAppletCredentials;
+import com.bimda.cdshproject.service.IUserRelationService;
+import com.bimda.cdshproject.service.IUserRoleService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,12 +36,16 @@ import java.util.Map;
 @RestController
 @RequestMapping("/userLogin")
 @Api(value = "登陆模块", tags = "登陆模块接口")
-public class LoginController extends BaseController {
+public class UserCenterController extends BaseController {
+    @Autowired
+    private IUserRelationService userRelationService;
     @Autowired
     private GetWeChatAppletCredentials getWeChatAppletCredentials;
     @Autowired
     private RestTemplate restTemplate;
-    @ApiOperation(value = "用户名片头像修改", notes = "用户名片头像修改", httpMethod = "POST")
+    @Autowired
+    private IUserRoleService userRoleService;
+    @ApiOperation(value = "用户第一次登陆", notes = "用户第一次解密", httpMethod = "POST")
     @PostMapping("/login")
     public ResponseVO login(@RequestParam String code) {
         //微信小程序解密接口
@@ -80,8 +89,20 @@ public class LoginController extends BaseController {
         JSONObject jsonObject= JSONObject.parseObject(responseEntity.getBody());
         //获取返回的openId
         String purePhoneNumber=jsonObject.getString("purePhoneNumber");
+        QueryWrapper<UserRelation> userRelationQueryWrapper = new QueryWrapper<>();
+        userRelationQueryWrapper.eq("user_tel",purePhoneNumber);
+        UserRelation userRelation = userRelationService.getOne(userRelationQueryWrapper);
+        QueryWrapper<UserRole> roleQueryWrapper = new QueryWrapper<>();
+        roleQueryWrapper.eq("user_id",userRelation.getUserId());
+        UserRole userRole = userRoleService.getOne(roleQueryWrapper);
+        WeChatAppletVO weChatAppletVO = new WeChatAppletVO();
+        weChatAppletVO.setHasAuthPhone(1);
+        if (userRole.getRoleId() == 2){
 
-//        return success(200,weChatAppletVO);
-        return null;
+            weChatAppletVO.setIsMember(1);
+        } else {
+            weChatAppletVO.setIsMember(0);
+        }
+       return success(200,weChatAppletVO);
     }
 }
