@@ -26,6 +26,13 @@ public interface ContactListMapper {
     List<UserInfoVO> listContactInfoByRoleId(Integer ... roleId);
 
     /**
+     * 根据条件以及类型编号查询所有联系人信息
+     * @param roleId 类型编号
+     * @return
+     */
+    List<UserInfoVO> listContactInfoByRoleIdAndCondition(String condition, Integer ... roleId);
+
+    /**
      * 查询所有联系人信息
      * @return
      */

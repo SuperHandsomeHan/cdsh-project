@@ -28,4 +28,12 @@ public interface IContactListService {
      * @return
      */
     List<ContactInfoVO> listContactInfo();
+
+    /**
+     * 根据条件查询所有联系人
+     * @param condition 条件
+     * @param roleIds 角色编号
+     * @return
+     */
+    List<ContactInfoVO> listContactInfoByCondition(String condition, Integer[] roleIds);
 }
