@@ -1,5 +1,4 @@
-server:
-  port: 10488
+
 spring:
   datasource:                                           # 数据源的相关配置        # 数据源类型：HikariCP
     url: jdbc:mysql://14.21.59.78:3307/cdsh_DB?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=CTT

@@ -41,10 +41,15 @@ spring:
 #
 ############################################################
 server:
-  #  port: 8088
-  jetty:
-    uri-encoding: UTF-8
-  max-http-header-size: 80KB
+  ssl:
+    # 证书路径
+    key-store: classpath:4774953_test.bimda.cn.pfx
+    enabled: true
+    key-store-type: PKCS12
+    #与申请时输入一致
+    key-store-password: Kj1U0sw6
+    # 浏览器默认端口 和 80 类似
+  port: 10488
 ############################################################
 #
 # mybatis mapper 配置
