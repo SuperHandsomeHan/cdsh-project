@@ -3,6 +3,7 @@ package com.bimda.cdshproject.pojo.vo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.domain.PageRequest;
 
 /**
  * @PACKAGE_NAME: com.bimda.cdshproject.pojo.vo
@@ -20,4 +21,18 @@ import lombok.NoArgsConstructor;
 public class WeChatAppletVO {
     private String headerOpenId;
     private String headerUserToken;
+    /**
+     * 用户是否手机授权
+     *
+     */
+    private Integer hasAuthPhone;
+    /**
+     * 用户信息
+     */
+    private Integer hasAuthUser;
+    /**
+     *  是否是会员
+     */
+    private Integer isMember;
+
 }

@@ -279,7 +279,7 @@ public class BusinessCardController extends BaseController {
         List<BusinessCard> list = (List<BusinessCard>) businessCardService.listByMap(idMap);
         return success(200,list);
     }
-    @ApiOperation(value = "查询用户所有名片", notes = "查询用户所有名片", httpMethod = "GET")
+    @ApiOperation(value = "修改用户名片状态", notes = "修改用户名片状态", httpMethod = "GET")
     @GetMapping("updateState")
     public ResponseVO updateState(
             @ApiParam(name = "BusinessCardUpdateStateBO", value = "BusinessCardUpdateStateBO", required = true)
@@ -290,12 +290,6 @@ public class BusinessCardController extends BaseController {
         QueryWrapper<BusinessCard> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("card_id",businessCardUpdateStateBO.getCardId());
         if (businessCardUpdateStateBO.getIsDefault().equals("1")){
-            QueryWrapper<BusinessCard> businessCardQueryWrapper = new QueryWrapper<>();
-
-            BusinessCard businessCard1 = businessCardService.getById(queryWrapper);
-            UserContactInfo userContactInfo = new UserContactInfo();
-            QueryWrapper<UserContactInfo> userContactInfoQueryWrapper = new QueryWrapper<>();
-
             userContactInfoService.update();
         }
         queryWrapper.eq("card_id",businessCardUpdateStateBO.getCardId());

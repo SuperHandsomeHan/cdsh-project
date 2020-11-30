@@ -61,4 +61,27 @@ public class LoginController extends BaseController {
         WeChatAppletVO weChatAppletVO = loginRedis(openId);
         return success(200,weChatAppletVO);
     }
+    @ApiOperation(value = "授权手机", notes = "授权手机", httpMethod = "POST")
+    @PostMapping("/hasAuthUser")
+    public ResponseVO hasAuthUser(@RequestParam String code) {
+        //微信小程序解密接口
+        String url = "https://api.weixin.qq.com/sns/jscode2session?appid={appid}&secret={secret}&js_code={code}&grant_type=authorization_code";
+        //创建请求接口的参数
+        Map<String, String> requestMap = new HashMap<>();
+        //小程序的apid
+        requestMap.put("appid", getWeChatAppletCredentials.getAppId());
+        //小程序的密码
+        requestMap.put("secret", getWeChatAppletCredentials.getSecretKey());
+        //用户的code
+        requestMap.put("code", code);
+        //发送https请求
+        ResponseEntity<String> responseEntity = restTemplate.getForEntity(url, String.class,requestMap);
+        //把返回的值转换为JSONObject
+        JSONObject jsonObject= JSONObject.parseObject(responseEntity.getBody());
+        //获取返回的openId
+        String purePhoneNumber=jsonObject.getString("purePhoneNumber");
+
+//        return success(200,weChatAppletVO);
+        return null;
+    }
 }

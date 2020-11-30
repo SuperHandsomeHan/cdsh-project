@@ -57,6 +57,9 @@ public class BaseController<T> {
         WeChatAppletVO weChatAppletVO = new WeChatAppletVO();
         weChatAppletVO.setHeaderOpenId(openId);
         weChatAppletVO.setHeaderUserToken(REDIS_USER_TOKEN+":"+""+openId);
+        weChatAppletVO.setHasAuthPhone(0);
+        weChatAppletVO.setHasAuthUser(0);
+        weChatAppletVO.setIsMember(0);
         return  weChatAppletVO;
     }
     public static  final File FILEPATH = new File("export" + File.separator);
