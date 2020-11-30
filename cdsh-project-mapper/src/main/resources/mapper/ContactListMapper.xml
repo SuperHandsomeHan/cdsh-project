@@ -23,4 +23,11 @@
         select ui.user_id, ui.user_name, ui.user_native, ui.user_position, ui.face_url
         from user_info ui
     </select>
+    <select id="listContactInfoByRoleIdAndCondition" resultMap="contactInfoMap">
+        select ui.user_id, ui.user_name, ui.user_native, ui.user_position, ui.face_url
+        from user_info ui left join user_role ur on ui.user_id = ur.user_id where ui.user_position like #{param1}"%" or ui.user_name like #{param1}"%" and ur.role_id in
+        <foreach collection="array" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </select>
 </mapper>

@@ -207,4 +207,37 @@ public class ContactListServiceImpl implements IContactListService {
             vo.setCompany(netAddressInfo.getAddressContent());
         }
     }
+
+    /**
+     * 根据条件查询所有联系人
+     * @param condition 条件
+     * @param roleIds 角色编号
+     * @return
+     */
+    @Override
+    public List<ContactInfoVO> listContactInfoByCondition(String condition, Integer[] roleIds) {
+        try {
+            List<UserInfoVO> list = new ArrayList<>();
+            if(roleIds ==  null || roleIds.length == 0){
+                throw new ApiException("请输入用户类型编号！");
+            }
+            QueryWrapper wrapper = new QueryWrapper();
+            wrapper.like("user_position", condition);
+            wrapper.or();
+            wrapper.like("user_name", condition);
+            list = contactListMapper.listContactInfoByRoleIdAndCondition(condition, roleIds);
+            List<ContactInfoVO> target = new ArrayList<>();
+            if(list != null || list.size() > 0){
+                for (UserInfoVO userInfoVO : list){
+                    ContactInfoVO contactInfoVO = new ContactInfoVO();
+                    BeanUtils.copyProperties(userInfoVO, contactInfoVO);
+                    selectUserInfo(contactInfoVO);
+                    target.add(contactInfoVO);
+                }
+            }
+            return target;
+        }catch (Exception e){
+            throw new ApiException(e);
+        }
+    }
 }
